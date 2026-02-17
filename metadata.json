@@ -1,0 +1,7 @@
+{
+  "name": "Andhra Agro Export - Global Moringa Lead Finder",
+  "description": "A professional export platform for Moringa powder featuring an AI-driven global buyer discovery tool using real-time search grounding.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
