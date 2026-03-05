@@ -1,13 +1,13 @@
 
 import React, { useState } from "react";
-import { findMoringaBuyers } from "./services/geminiService";
+import { findMoringaBuyers } from "./services/openaiService";
 
 const COUNTRIES = [
   "Netherlands", "Germany", "USA", "South Korea", "Japan",
   "UAE", "Australia", "France", "UK", "Canada", "Singapore", "Brazil"
 ];
 
-function Badge({ label, color = "#2d5016", bg = "#edf7e4" }) {
+function Badge({ label, color = "#2d5016", bg = "#edf7e4" }: { key?: any; label: any; color?: string; bg?: string; }) {
   return (
     <span style={{
       fontSize: 9, fontWeight: 800, letterSpacing: "0.12em", textTransform: "uppercase",
@@ -18,7 +18,7 @@ function Badge({ label, color = "#2d5016", bg = "#edf7e4" }) {
   );
 }
 
-function BuyerCard({ buyer, index }) {
+function BuyerCard({ buyer, index }: { key?: any; buyer: any; index: any; }) {
   const [copied, setCopied] = useState(false);
   const tier = {
     High: { bg: "#edf7e4", text: "#1a5c0a", dot: "#34a853" },
@@ -213,7 +213,7 @@ function BuyerCard({ buyer, index }) {
   );
 }
 
-function MarketOverview({ overview, country }) {
+function MarketOverview({ overview, country }: { overview: any; country: string; }) {
   if (!overview) return null;
   return (
     <div style={{
@@ -271,7 +271,7 @@ export default function App() {
     setError(null);
 
     try {
-      setLoadMsg("🔍 Searching live trade databases with Gemini 2.0...");
+      setLoadMsg("🔍 Searching live trade databases with OpenAI...");
       const data = await findMoringaBuyers(country);
       
       if (!data.buyers || data.buyers.length === 0) {
@@ -328,7 +328,7 @@ export default function App() {
               width: 8, height: 8, borderRadius: "50%", background: "#4caf50",
               animation: "pulse 2s infinite", display: "inline-block"
             }} />
-            Gemini 2.0 Live Search
+            OpenAI Live Search
           </div>
           <button style={{
             background: "#1a3d08", color: "#fff", padding: "9px 22px", borderRadius: 40,
@@ -360,7 +360,7 @@ export default function App() {
               <span style={{ color: "#d8d4cc" }}>Intelligence.</span>
             </h1>
             <p style={{ fontSize: 16, color: "#888", lineHeight: 1.7, maxWidth: 460, margin: "0 0 32px" }}>
-              Free Trade AI discovery tool for Andhra exporters. Find bulk buyers with real-time data scraping powered by Google Gemini.
+              Free Trade AI discovery tool for Andhra exporters. Find bulk buyers with real-time data scraping powered by OpenAI.
             </p>
             <a href="#finder" style={{
               display: "inline-block", background: "#1a3d08", color: "#fff",
@@ -398,7 +398,7 @@ export default function App() {
               Target <span style={{ color: "#2d5016" }}>Any Country.</span>
             </h2>
             <p style={{ fontSize: 15, color: "#999", fontWeight: 500, margin: 0 }}>
-              Using Gemini 2.0 to scrap real business directories and import records.
+              Using OpenAI to scrap real business directories and import records.
             </p>
           </div>
 
@@ -463,7 +463,7 @@ export default function App() {
                 margin: "0 auto 20px", fontSize: 26
               }}>🌿</div>
               <p style={{ fontSize: 14, fontWeight: 700, color: "#2d5016", margin: "0 0 6px" }}>{loadMsg}</p>
-              <p style={{ fontSize: 12, color: "#bbb", margin: 0 }}>Google AI is processing trade records...</p>
+              <p style={{ fontSize: 12, color: "#bbb", margin: 0 }}>OpenAI is processing trade records...</p>
             </div>
           )}
 
