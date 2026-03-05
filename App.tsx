@@ -1,6 +1,7 @@
 
 import React, { useState } from "react";
 import { findMoringaBuyers } from "./services/openaiService";
+import heroImage from "./assets/hero-image.png";
 
 const COUNTRIES = [
   "Netherlands", "Germany", "USA", "South Korea", "Japan",
@@ -372,15 +373,12 @@ export default function App() {
             </a>
           </div>
           <div style={{ position: "relative" }}>
-            <div style={{
-              position: "absolute", inset: -14, background: "#f0f9e8",
-              borderRadius: 44, transform: "rotate(-2deg)"
-            }} />
-            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800"
-              alt="Moringa leaves"
+            <img src={heroImage}
+              alt="Woman with Moringa Juice"
               style={{
-                position: "relative", width: "100%", height: 380, objectFit: "cover",
-                borderRadius: 36, boxShadow: "0 20px 56px rgba(0,0,0,0.13)", border: "4px solid #fff"
+                position: "relative", width: "100%", height: "auto", objectFit: "contain",
+                maxHeight: 500,
+                filter: "drop-shadow(0 20px 40px rgba(0,0,0,0.15))"
               }} />
           </div>
         </div>
