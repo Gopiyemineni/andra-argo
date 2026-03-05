@@ -376,7 +376,7 @@ export default function App() {
               position: "absolute", inset: -14, background: "#f0f9e8",
               borderRadius: 44, transform: "rotate(-2deg)"
             }} />
-            <img src="https://images.unsplash.com/photo-1598346762291-aee88549193f?auto=format&fit=crop&q=80&w=800"
+            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&q=80&w=800"
               alt="Moringa leaves"
               style={{
                 position: "relative", width: "100%", height: 380, objectFit: "cover",
